@@ -17,6 +17,8 @@
 		4C5304572370D50F00D12900 /* ChatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5304562370D50F00D12900 /* ChatterUITests.swift */; };
 		4C53046723714CDC00D12900 /* MessageBoardControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53046623714CDC00D12900 /* MessageBoardControllerViewController.swift */; };
 		4C530469237155DC00D12900 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C530468237155DB00D12900 /* RegistrationController.swift */; };
+		4C53046B2371E21A00D12900 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4C53046A2371E21A00D12900 /* Podfile */; };
+		63DBF89A33DE025C3915ADE5 /* libPods-Chatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F23D1B456A4270976714250 /* libPods-Chatter.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F23D1B456A4270976714250 /* libPods-Chatter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chatter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C9F9E11AA5BE8486CC878C /* Pods-Chatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.debug.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.debug.xcconfig"; sourceTree = "<group>"; };
 		4C5304312370D50C00D12900 /* Chatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5304342370D50C00D12900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C5304362370D50C00D12900 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 		4C5304582370D50F00D12900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C53046623714CDC00D12900 /* MessageBoardControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardControllerViewController.swift; sourceTree = "<group>"; };
 		4C530468237155DB00D12900 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		4C53046A2371E21A00D12900 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		F2C467BB33B69C886BB992F6 /* Pods-Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.release.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63DBF89A33DE025C3915ADE5 /* libPods-Chatter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,13 +87,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05D08E3D82750FB105C0AC58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49C9F9E11AA5BE8486CC878C /* Pods-Chatter.debug.xcconfig */,
+				F2C467BB33B69C886BB992F6 /* Pods-Chatter.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		181E591DBFCB372FFB365036 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F23D1B456A4270976714250 /* libPods-Chatter.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4C5304282370D50C00D12900 = {
 			isa = PBXGroup;
 			children = (
+				4C53046A2371E21A00D12900 /* Podfile */,
 				4C5304332370D50C00D12900 /* Chatter */,
 				4C53044A2370D50F00D12900 /* ChatterTests */,
 				4C5304552370D50F00D12900 /* ChatterUITests */,
 				4C5304322370D50C00D12900 /* Products */,
+				05D08E3D82750FB105C0AC58 /* Pods */,
+				181E591DBFCB372FFB365036 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C53045B2370D50F00D12900 /* Build configuration list for PBXNativeTarget "Chatter" */;
 			buildPhases = (
+				BD7A51A7B0BF1669B65DDD86 /* [CP] Check Pods Manifest.lock */,
 				4C53042D2370D50C00D12900 /* Sources */,
 				4C53042E2370D50C00D12900 /* Frameworks */,
 				4C53042F2370D50C00D12900 /* Resources */,
+				5F3097A4FEA7F42B0C598101 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +270,7 @@
 			files = (
 				4C5304412370D50E00D12900 /* LaunchScreen.storyboard in Resources */,
 				4C53043E2370D50E00D12900 /* Assets.xcassets in Resources */,
+				4C53046B2371E21A00D12900 /* Podfile in Resources */,
 				4C53043C2370D50C00D12900 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +290,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F3097A4FEA7F42B0C598101 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chatter/Pods-Chatter-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chatter/Pods-Chatter-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chatter/Pods-Chatter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD7A51A7B0BF1669B65DDD86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chatter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C53042D2370D50C00D12900 /* Sources */ = {
@@ -440,6 +513,7 @@
 		};
 		4C53045C2370D50F00D12900 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49C9F9E11AA5BE8486CC878C /* Pods-Chatter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +532,7 @@
 		};
 		4C53045D2370D50F00D12900 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2C467BB33B69C886BB992F6 /* Pods-Chatter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
