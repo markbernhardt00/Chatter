@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="599" y="516"/>
         </scene>
-        <!--Message Board Controller View Controller-->
+        <!--Message Board View Controller-->
         <scene sceneID="2RF-Je-9tM">
             <objects>
-                <viewController id="gFf-3k-imv" customClass="MessageBoardControllerViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gFf-3k-imv" customClass="MessageBoardViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kyA-fc-LOY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,15 +150,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="List" id="seg-Z6-s8T">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="AOd-MR-znR" detailTextLabel="GAv-Y3-wUw" style="IBUITableViewCellStyleValue1" id="seg-Z6-s8T">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="seg-Z6-s8T" id="wz2-sF-h7m">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AOd-MR-znR">
+                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GAv-Y3-wUw">
+                                                    <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gFf-3k-imv" id="4ty-gi-Woo"/>
+                                    <outlet property="delegate" destination="gFf-3k-imv" id="gg0-5f-ft8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -166,6 +186,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="PFo-z8-XcE"/>
                     <connections>
+                        <outlet property="messageTableOutlet" destination="Ze2-Dx-qFF" id="Qcm-tJ-Hgg"/>
                         <segue destination="emP-WS-eQg" kind="show" id="qxI-4T-RsF"/>
                         <segue destination="qLP-RN-akW" kind="show" id="DbW-b5-vXd"/>
                     </connections>
@@ -319,6 +340,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1Eh-hh-qft"/>
+        <segue reference="dsh-ey-Nhz"/>
     </inferredMetricsTieBreakers>
 </document>

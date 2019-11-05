@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,7 @@
 		4C5304412370D50E00D12900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C53043F2370D50E00D12900 /* LaunchScreen.storyboard */; };
 		4C53044C2370D50F00D12900 /* ChatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53044B2370D50F00D12900 /* ChatterTests.swift */; };
 		4C5304572370D50F00D12900 /* ChatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5304562370D50F00D12900 /* ChatterUITests.swift */; };
-		4C53046723714CDC00D12900 /* MessageBoardControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53046623714CDC00D12900 /* MessageBoardControllerViewController.swift */; };
+		4C53046723714CDC00D12900 /* MessageBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53046623714CDC00D12900 /* MessageBoardViewController.swift */; };
 		4C530469237155DC00D12900 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C530468237155DB00D12900 /* RegistrationController.swift */; };
 		4C53046B2371E21A00D12900 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4C53046A2371E21A00D12900 /* Podfile */; };
 		63DBF89A33DE025C3915ADE5 /* libPods-Chatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F23D1B456A4270976714250 /* libPods-Chatter.a */; };
@@ -55,9 +55,9 @@
 		4C5304522370D50F00D12900 /* ChatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5304562370D50F00D12900 /* ChatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterUITests.swift; sourceTree = "<group>"; };
 		4C5304582370D50F00D12900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C53046623714CDC00D12900 /* MessageBoardControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardControllerViewController.swift; sourceTree = "<group>"; };
+		4C53046623714CDC00D12900 /* MessageBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardViewController.swift; sourceTree = "<group>"; };
 		4C530468237155DB00D12900 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
-		4C53046A2371E21A00D12900 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		4C53046A2371E21A00D12900 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F2C467BB33B69C886BB992F6 /* Pods-Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.release.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +93,6 @@
 				49C9F9E11AA5BE8486CC878C /* Pods-Chatter.debug.xcconfig */,
 				F2C467BB33B69C886BB992F6 /* Pods-Chatter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,7 +133,7 @@
 				4C5304342370D50C00D12900 /* AppDelegate.swift */,
 				4C5304362370D50C00D12900 /* SceneDelegate.swift */,
 				4C5304382370D50C00D12900 /* ViewController.swift */,
-				4C53046623714CDC00D12900 /* MessageBoardControllerViewController.swift */,
+				4C53046623714CDC00D12900 /* MessageBoardViewController.swift */,
 				4C530468237155DB00D12900 /* RegistrationController.swift */,
 				4C53043A2370D50C00D12900 /* Main.storyboard */,
 				4C53043D2370D50E00D12900 /* Assets.xcassets */,
@@ -339,7 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5304392370D50C00D12900 /* ViewController.swift in Sources */,
-				4C53046723714CDC00D12900 /* MessageBoardControllerViewController.swift in Sources */,
+				4C53046723714CDC00D12900 /* MessageBoardViewController.swift in Sources */,
 				4C5304352370D50C00D12900 /* AppDelegate.swift in Sources */,
 				4C530469237155DC00D12900 /* RegistrationController.swift in Sources */,
 				4C5304372370D50C00D12900 /* SceneDelegate.swift in Sources */,
