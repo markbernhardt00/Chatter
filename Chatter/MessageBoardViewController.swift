@@ -7,7 +7,13 @@
 //
 
 import UIKit
+import Foundation
 import Alamofire
+
+enum BackendError: Error {
+  case urlError(reason: String)
+  case objectSerialization(reason: String)
+}
 
 class MessageBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -42,7 +48,6 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
 
         navigationItem.title = "Message Board"
         self.tableview?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
-        self.l
     }
 
     
@@ -76,11 +81,11 @@ class Message {
         return "http://142.93.64.49/messages"
     }
     
-    private class func messageArrayFromResponse(_ response: DataResponse<Any>) -> Result<MessageWrapper> {
-        guard response.result.error == nil else {
+    private class func messageArrayFromResponse(_ response: DataResponse<Any, AFError>) -> AFResult<MessageWrapper> {
+        guard response.error == nil else {
         // got an error in getting the data, need to handle it
-        print(response.result.error!)
-        return .failure(response.result.error!)
+            print(response.error!)
+            return .failure(response.error!)
       }
       
       // make sure we got JSON and it's a dictionary
@@ -188,9 +193,4 @@ class Message {
       }
     }
     
-}
-
-enum BackendError: Error {
-  case urlError(reason: String)
-  case objectSerialization(reason: String)
 }
