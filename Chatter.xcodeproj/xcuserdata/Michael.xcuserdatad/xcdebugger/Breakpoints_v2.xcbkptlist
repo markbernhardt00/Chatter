@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "411AFCE4-5C76-4F40-8431-CA310E308E1E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9308F23C-8ABC-400D-9583-2696FFCABF62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chatter/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9308F23C-8ABC-400D-9583-2696FFCABF62 - 54ccdd8af6d4b088"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chatter.ViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Chatter.ViewController"
+                  moduleName = "Chatter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Michael/workspace/Chatter/Chatter/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "9308F23C-8ABC-400D-9583-2696FFCABF62 - 185c1beb51077614"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chatter.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Chatter.ViewController"
+                  moduleName = "Chatter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Michael/workspace/Chatter/Chatter/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "146">
+               </Location>
+               <Location
+                  uuid = "9308F23C-8ABC-400D-9583-2696FFCABF62 - 8a8ab11c8a779360"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chatter.ViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Chatter.ViewController&gt;"
+                  moduleName = "Chatter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Michael/workspace/Chatter/Chatter/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "9308F23C-8ABC-400D-9583-2696FFCABF62 - 7df7ba8760a29c6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chatter.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Chatter.ViewController&gt;"
+                  moduleName = "Chatter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Michael/workspace/Chatter/Chatter/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "9308F23C-8ABC-400D-9583-2696FFCABF62 - 1c1368d5b9a3213b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chatter.ViewController.__deallocating_deinit"
+                  moduleName = "Chatter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Michael/workspace/Chatter/Chatter/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

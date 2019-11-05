@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 
 class MessageBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var message: [Message]?
+    var messageWrapper: MessageWrapper? // holds the last wrapper that we've loaded
+    var isLoadingSpecies = false
     @IBOutlet weak var messageTableOutlet: UITableView!
     
     var items = ["item1","item2","item3"]
@@ -37,6 +41,8 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         // Do any additional setup after loading the view.
 
         navigationItem.title = "Message Board"
+        self.tableview?.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
+        self.l
     }
 
     
@@ -110,7 +116,7 @@ class Message {
         completionHandler(.failure(error))
         return
       }
-      let _ = Alamofire.request(url)
+        let _ = (Alamofire.request(url) as AnyObject)
         .responseJSON { response in
           if let error = response.result.error {
             completionHandler(.failure(error))
@@ -133,6 +139,55 @@ class Message {
       }
       getSpeciesAtPath(nextURL, completionHandler: completionHandler)
     }
+    
+    func loadFirstSpecies() {
+      isLoadingSpecies = true
+      StarWarsSpecies.getSpecies { result in
+        if let error = result.error {
+          // TODO: improved error handling
+          self.isLoadingSpecies = false
+          let alert = UIAlertController(title: "Error", message: "Could not load first species :( \(error.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+          alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+          self.present(alert, animated: true, completion: nil)
+        }
+        let speciesWrapper = result.value
+        self.addSpeciesFromWrapper(speciesWrapper)
+        self.isLoadingSpecies = false
+        self.tableview?.reloadData()
+      }
+    }
+
+    func loadMoreSpecies() {
+      self.isLoadingSpecies = true
+      if let species = self.species,
+        let wrapper = self.speciesWrapper,
+        let totalSpeciesCount = wrapper.count,
+        species.count < totalSpeciesCount {
+        // there are more species out there!
+        StarWarsSpecies.getMoreSpecies(speciesWrapper) { result in
+          if let error = result.error {
+            self.isLoadingSpecies = false
+            let alert = UIAlertController(title: "Error", message: "Could not load more species :( \(error.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+          }
+          let moreWrapper = result.value
+          self.addSpeciesFromWrapper(moreWrapper)
+          self.isLoadingSpecies = false
+          self.tableview?.reloadData()
+        }
+      }
+    }
+
+    func addSpeciesFromWrapper(_ wrapper: SpeciesWrapper?) {
+      self.speciesWrapper = wrapper
+      if self.species == nil {
+        self.species = self.speciesWrapper?.species
+      } else if self.speciesWrapper != nil && self.speciesWrapper!.species != nil {
+        self.species = self.species! + self.speciesWrapper!.species!
+      }
+    }
+    
 }
 
 enum BackendError: Error {
