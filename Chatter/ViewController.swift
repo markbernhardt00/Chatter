@@ -29,9 +29,17 @@ class ViewController: UIViewController {
         showMessageBoardController(self)
     }
     
+    @IBAction func signUpBtn(_ sender: Any) {
+        showHomeFromReg(self)
+    }
+    
     @IBAction func showMessageBoardController(_ sender: Any) {
       performSegue(withIdentifier: "messageBoardSegue", sender: self)
-        
+
+        }
+    
+    @IBAction func showHomeFromReg(_ sender: Any) {
+          performSegue(withIdentifier: "registrationSegue", sender: self)
     }
     
 }

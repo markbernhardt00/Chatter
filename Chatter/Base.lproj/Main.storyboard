@@ -79,6 +79,9 @@
                                 <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="12"/>
                                 <color key="tintColor" red="0.00014052976620000001" green="0.063222371040000003" blue="0.25569301840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <action selector="signUpBtn:" destination="zim-fU-Aqg" eventType="touchUpInside" id="wmy-e9-Xj3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -247,6 +250,7 @@
                                     <color key="titleColor" red="0.91455441709999996" green="0.88298678399999997" blue="0.84096640349999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="createAccountBtn:" destination="peS-as-Ddm" eventType="touchUpInside" id="BfL-EM-5oS"/>
                                     <action selector="signInAction:" destination="zim-fU-Aqg" eventType="touchUpInside" id="Fkj-JE-yc6"/>
                                 </connections>
                             </button>
@@ -256,6 +260,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QMz-ct-Stn"/>
                     <connections>
+                        <outlet property="createAccountOutlet" destination="4zH-VU-42v" id="5bp-Vn-IqN"/>
                         <segue destination="gFf-3k-imv" kind="show" identifier="regToHomeSegue" id="dsh-ey-Nhz"/>
                     </connections>
                 </viewController>
@@ -290,6 +295,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dsh-ey-Nhz"/>
+        <segue reference="1Eh-hh-qft"/>
     </inferredMetricsTieBreakers>
 </document>
