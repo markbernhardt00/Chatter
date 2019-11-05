@@ -15,6 +15,8 @@
 		4C5304412370D50E00D12900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C53043F2370D50E00D12900 /* LaunchScreen.storyboard */; };
 		4C53044C2370D50F00D12900 /* ChatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53044B2370D50F00D12900 /* ChatterTests.swift */; };
 		4C5304572370D50F00D12900 /* ChatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5304562370D50F00D12900 /* ChatterUITests.swift */; };
+		4C53046723714CDC00D12900 /* MessageBoardControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53046623714CDC00D12900 /* MessageBoardControllerViewController.swift */; };
+		4C530469237155DC00D12900 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C530468237155DB00D12900 /* RegistrationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4C5304522370D50F00D12900 /* ChatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5304562370D50F00D12900 /* ChatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterUITests.swift; sourceTree = "<group>"; };
 		4C5304582370D50F00D12900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C53046623714CDC00D12900 /* MessageBoardControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardControllerViewController.swift; sourceTree = "<group>"; };
+		4C530468237155DB00D12900 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				4C5304342370D50C00D12900 /* AppDelegate.swift */,
 				4C5304362370D50C00D12900 /* SceneDelegate.swift */,
 				4C5304382370D50C00D12900 /* ViewController.swift */,
+				4C53046623714CDC00D12900 /* MessageBoardControllerViewController.swift */,
+				4C530468237155DB00D12900 /* RegistrationController.swift */,
 				4C53043A2370D50C00D12900 /* Main.storyboard */,
 				4C53043D2370D50E00D12900 /* Assets.xcassets */,
 				4C53043F2370D50E00D12900 /* LaunchScreen.storyboard */,
@@ -260,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5304392370D50C00D12900 /* ViewController.swift in Sources */,
+				4C53046723714CDC00D12900 /* MessageBoardControllerViewController.swift in Sources */,
 				4C5304352370D50C00D12900 /* AppDelegate.swift in Sources */,
+				4C530469237155DC00D12900 /* RegistrationController.swift in Sources */,
 				4C5304372370D50C00D12900 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
