@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var species: [Message]?
-    var speciesWrapper: MessageWrapper? // holds the last wrapper that we've loaded
-    var isLoadingSpecies = false
+    var messages: [Message]?
+    var messageWrapper: MessageWrapper? // holds the last wrapper that we've loaded
+    var isLoadingMessages = false
     
     @IBOutlet weak var signInOutlet: UIButton!
     

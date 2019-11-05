@@ -19,7 +19,8 @@
 		4C530469237155DC00D12900 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C530468237155DB00D12900 /* RegistrationController.swift */; };
 		4C53046B2371E21A00D12900 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4C53046A2371E21A00D12900 /* Podfile */; };
 		63DBF89A33DE025C3915ADE5 /* libPods-Chatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F23D1B456A4270976714250 /* libPods-Chatter.a */; };
-		8A679C40237213AC0055866D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A679C3F237213AC0055866D /* Message.swift */; };
+		8A679C44237228910055866D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A679C43237228910055866D /* Message.swift */; };
+		8AFFCB2C237236070029F7DA /* libSwiftyJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFFCB2B237236070029F7DA /* libSwiftyJSON.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,8 @@
 		4C53046623714CDC00D12900 /* MessageBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardViewController.swift; sourceTree = "<group>"; };
 		4C530468237155DB00D12900 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		4C53046A2371E21A00D12900 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		8A679C3F237213AC0055866D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8A679C43237228910055866D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8AFFCB2B237236070029F7DA /* libSwiftyJSON.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSwiftyJSON.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C467BB33B69C886BB992F6 /* Pods-Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.release.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63DBF89A33DE025C3915ADE5 /* libPods-Chatter.a in Frameworks */,
+				8AFFCB2C237236070029F7DA /* libSwiftyJSON.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +104,7 @@
 		181E591DBFCB372FFB365036 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AFFCB2B237236070029F7DA /* libSwiftyJSON.a */,
 				2F23D1B456A4270976714250 /* libPods-Chatter.a */,
 			);
 			name = Frameworks;
@@ -141,7 +145,7 @@
 				4C53043D2370D50E00D12900 /* Assets.xcassets */,
 				4C53043F2370D50E00D12900 /* LaunchScreen.storyboard */,
 				4C5304422370D50E00D12900 /* Info.plist */,
-				8A679C3F237213AC0055866D /* Message.swift */,
+				8A679C43237228910055866D /* Message.swift */,
 			);
 			path = Chatter;
 			sourceTree = "<group>";
@@ -343,7 +347,7 @@
 				4C5304392370D50C00D12900 /* ViewController.swift in Sources */,
 				4C53046723714CDC00D12900 /* MessageBoardViewController.swift in Sources */,
 				4C5304352370D50C00D12900 /* AppDelegate.swift in Sources */,
-				8A679C40237213AC0055866D /* Message.swift in Sources */,
+				8A679C44237228910055866D /* Message.swift in Sources */,
 				4C530469237155DC00D12900 /* RegistrationController.swift in Sources */,
 				4C5304372370D50C00D12900 /* SceneDelegate.swift in Sources */,
 			);
