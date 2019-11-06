@@ -8,6 +8,7 @@
 
 import UIKit
 import CryptoSwift
+import Alamofire
 
 class ViewController: UIViewController {
     
@@ -54,9 +55,25 @@ class ViewController: UIViewController {
         }
         
         let hash = passwordHash(from: username, password: password)
-        print(hash)
         
-        showMessageBoardController(self)
+        let parameters: [String: String] = [
+            "username" : username,
+            "password": hash
+        ]
+        AF.request("http://142.93.64.49/users/login", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+        .responseJSON { response in
+            switch response.result {
+            case .success:
+                print("Login Successful")
+                self.showMessageBoardController(self)
+            case let .failure(error):
+                print("FAILED")
+                print(error)
+            }
+        }
+        
+        
     }
     
     @IBAction func signUpBtn(_ sender: Any) {

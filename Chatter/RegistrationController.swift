@@ -55,18 +55,17 @@ class RegistrationController: UIViewController {
             "email" : email,
             "password": hash
         ]
-
-        AF.request("http://142.93.64.49/users/register", method: .post, parameters: parameters)
+        AF.request("http://142.93.64.49/users/register", method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
-        { response in
+        .responseJSON { response in
             switch response.result {
             case .success:
                 print("Registration Successful")
                 self.showMessageBoardViewController(self)
             case let .failure(error):
+                print("FAILED")
                 print(error)
             }
-            
         }
     }
     
