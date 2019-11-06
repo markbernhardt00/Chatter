@@ -21,6 +21,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - CryptoSwift (1.1.3)
   - FBSDKCoreKit (4.44.1):
     - Bolts (~> 1.9)
   - SwiftyJSON (4.3.0)
@@ -28,6 +29,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Alamofire (~> 5.0.0-rc.3)
+  - CryptoSwift (~> 1.0)
   - FBSDKCoreKit (~> 4.9)
   - SwiftyJSON (~> 4.0)
 
@@ -36,6 +38,7 @@ SPEC REPOS:
     - AFNetworking
     - Alamofire
     - Bolts
+    - CryptoSwift
     - FBSDKCoreKit
     - SwiftyJSON
 
@@ -43,9 +46,10 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CryptoSwift: 6b6e488df0598b3e9fa49254ed1a65e8c1b1e10b
   FBSDKCoreKit: a823ae35bdb60ebb8d7a7e51abe7c5d87d2bfced
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 457bbe427029f2f148dada236a6ac6398e40a8b6
+PODFILE CHECKSUM: 4d4f16732f73bfc97255527e1134be7892fb7ee4
 
 COCOAPODS: 1.8.4

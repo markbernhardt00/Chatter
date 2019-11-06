@@ -26,7 +26,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier:"Cell")
-        cell.textLabel?.text = messages[indexPath.row].content
+        cell.textLabel?.text = messages[indexPath.row].content! + " via " + messages[indexPath.row].username!
         return cell
     }
     
@@ -62,9 +62,10 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
                             let message = Message(username: name, content: content)
                             self.messages.append(message)
                             print(self.messages)
-                            self.messageTableOutlet.reloadData()
                          }
                      }
+                    self.messages.reverse()
+                    self.messageTableOutlet.reloadData()
                 }catch{
                      print("Unexpected error: \(error).")
                  }
