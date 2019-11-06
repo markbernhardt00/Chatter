@@ -35,6 +35,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        messages = []
         messageTableOutlet.isUserInteractionEnabled = true
         fetchMessages()
         // Do any additional setup after loading the view.

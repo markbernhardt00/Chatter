@@ -29,14 +29,22 @@ class PostMessageViewController: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
     func post() {
         
         
         let exp = expirationDate.date
+        print("BEFORE")
+        print(exp)
         
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date / server String
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0) as TimeZone
 
         let dateString = formatter.string(from: exp) // string purpose I add here
 //        // convert your string to date
@@ -46,7 +54,9 @@ class PostMessageViewController: UIViewController {
 //        // again convert your date to string
 //        let myStringafd = formatter.string(from: yourDate!)
 
+        print("AFTER")
         print(dateString)
+        
         
         let parameters: [String: String] = [
             "username" : loggedInUser,
