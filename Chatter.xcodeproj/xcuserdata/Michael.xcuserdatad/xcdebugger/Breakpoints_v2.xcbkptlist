@@ -18,6 +18,38 @@
             endingLineNumber = "11"
             landmarkName = "unknown"
             landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "9308F23C-8ABC-400D-9583-2696FFCABF62 - 55bc21876e814a55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_DC9E86BE2391399B05587079D0DA5B7E_func0"
+                  moduleName = "Chatter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Michael/workspace/Chatter/Chatter/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "9308F23C-8ABC-400D-9583-2696FFCABF62 - 2ea2ba98794ccae0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chatter.loggedInUser.unsafeMutableAddressor : Swift.String"
+                  moduleName = "Chatter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Michael/workspace/Chatter/Chatter/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
