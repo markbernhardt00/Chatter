@@ -308,6 +308,11 @@
                     <navigationItem key="navigationItem" id="QMz-ct-Stn"/>
                     <connections>
                         <outlet property="createAccountOutlet" destination="4zH-VU-42v" id="5bp-Vn-IqN"/>
+                        <outlet property="emailOutlet" destination="CZ5-ZP-T9y" id="Usu-Bc-Jnl"/>
+                        <outlet property="fNameOutlet" destination="9TE-kR-ycG" id="Lru-Z0-dHC"/>
+                        <outlet property="lNameOutlet" destination="shY-0p-YWd" id="cib-hX-HDc"/>
+                        <outlet property="passwordOutlet" destination="QjL-ic-i5E" id="ATA-mW-SU0"/>
+                        <outlet property="usernameOutlet" destination="o0A-EV-gvs" id="pDU-Xf-gcZ"/>
                         <segue destination="gFf-3k-imv" kind="show" identifier="regToHomeSegue" id="dsh-ey-Nhz"/>
                     </connections>
                 </viewController>
@@ -342,6 +347,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1Eh-hh-qft"/>
+        <segue reference="dsh-ey-Nhz"/>
     </inferredMetricsTieBreakers>
 </document>
