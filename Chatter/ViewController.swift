@@ -9,6 +9,7 @@
 import UIKit
 import CryptoSwift
 import Alamofire
+var loggedInUser = ""
 
 class ViewController: UIViewController {
     
@@ -66,7 +67,8 @@ class ViewController: UIViewController {
             switch response.result {
             case .success:
                 print("Login Successful")
-                self.showMessageBoardController(self)
+               loggedInUser = username
+            self.showMessageBoardController(self)
             case let .failure(error):
                 let alert = UIAlertController(title: "Error", message: "Login failed try again", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
