@@ -66,6 +66,7 @@ class RegistrationController: UIViewController {
             switch response.result {
             case .success:
                 print("Registration Successful")
+                loggedInUser = username
                 self.showMessageBoardViewController(self)
             case let .failure(error):
                 let alert = UIAlertController(title: "Error", message: "Registration failed try again", preferredStyle: .alert)
