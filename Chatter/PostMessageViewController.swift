@@ -41,9 +41,10 @@ class PostMessageViewController: UIViewController {
     
     
     @IBAction func postMessageAction(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
+        print(expirationDate.date)
     }
+    
+    
     
 
     /*
