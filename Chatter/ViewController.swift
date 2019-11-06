@@ -40,6 +40,11 @@ class ViewController: UIViewController {
       return "\(password).\(username).\(salt)".sha256()
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+
     @IBAction func signInAction(_ sender: Any) {
         guard let username = usernameOutlet.text, username.count > 0 else {
             return
@@ -50,6 +55,7 @@ class ViewController: UIViewController {
         
         let hash = passwordHash(from: username, password: password)
         print(hash)
+        
         showMessageBoardController(self)
     }
     
