@@ -38,7 +38,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         messageTableOutlet.isUserInteractionEnabled = true
         fetchMessages()
         // Do any additional setup after loading the view.
-        navigationItem.title = "Message Board"
+        navigationItem.title = loggedInUser + "'s Board"
         self.messageTableOutlet.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
         
         let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)

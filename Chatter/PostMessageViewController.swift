@@ -60,7 +60,7 @@ class PostMessageViewController: UIViewController {
             case .success:
                 print("New post Successful")
             case let .failure(error):
-                let alert = UIAlertController(title: "Error", message: "Registration failed try again", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "Post failed! :(", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
                 self.present(alert, animated: true)
                 print("FAILED")
