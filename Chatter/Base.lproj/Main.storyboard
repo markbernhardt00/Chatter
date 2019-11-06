@@ -150,7 +150,11 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Ju4-ZB-eRY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gQC-AS-ya6" appends="YES" id="nOP-Aq-MYp"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="PFo-z8-XcE"/>
                     <connections>
@@ -160,6 +164,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j84-jQ-nMz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gQC-AS-ya6">
+                    <connections>
+                        <action selector="tap:" destination="gFf-3k-imv" id="OwX-fE-1qz"/>
+                        <outlet property="delegate" destination="Ze2-Dx-qFF" id="Fnm-g7-sCZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3973.913043478261" y="863.83928571428567"/>
         </scene>

@@ -12,18 +12,21 @@ import Alamofire
 import SwiftyJSON
 
 class MessageBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-      
+    
     var messages: [Message] = []
     var messageWrapper: MessageWrapper? // holds the last wrapper that we've loaded
     var isLoadingMessages = false
     @IBOutlet weak var messageTableOutlet: UITableView!
     
-    var items = ["item1","item2","item3"]
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
     
+    @IBAction func tap(_ sender: UITapGestureRecognizer) {
+        print("tap")
+        fetchMessages()
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier:"Cell")
         cell.textLabel?.text = messages[indexPath.row].content! + " via " + messages[indexPath.row].username!
@@ -32,6 +35,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageTableOutlet.isUserInteractionEnabled = true
         fetchMessages()
         // Do any additional setup after loading the view.
         navigationItem.title = "Message Board"
@@ -43,7 +47,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func fetchMessages() {
-        items = []
+    
         AF.request(Message.endpointForMessages())
             .validate(statusCode: 200..<400)
             .validate(contentType: ["application/json"])
@@ -55,6 +59,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                  print("Data: \(utf8Text)") // original server data as UTF8 string
                  do{
+                    self.messages = []
                       // Get json data
                      let json = try JSON(data: data)
                      // Loop sub-json countries array
