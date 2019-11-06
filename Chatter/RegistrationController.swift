@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegistrationController: UIViewController {
 
@@ -47,7 +48,26 @@ class RegistrationController: UIViewController {
         
         let hash = passwordHash(from: username, password: password)
         print(hash)
-        showMessageBoardViewController(self)
+        
+        let parameters: [String: String] = [
+            "username" : username,
+            "name" : fName + " " + lName,
+            "email" : email,
+            "password": hash
+        ]
+
+        AF.request("http://142.93.64.49/users/register", method: .post, parameters: parameters)
+            .validate(statusCode: 200..<300)
+        { response in
+            switch response.result {
+            case .success:
+                print("Registration Successful")
+                self.showMessageBoardViewController(self)
+            case let .failure(error):
+                print(error)
+            }
+            
+        }
     }
     
     @IBAction func showMessageBoardViewController(_ sender: Any) {
