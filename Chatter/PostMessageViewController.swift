@@ -81,6 +81,9 @@ class PostMessageViewController: UIViewController {
     
     @IBAction func postMessageAction(_ sender: Any) {
         post()
+        let vc: UIViewController = storyboard?.instantiateViewController(withIdentifier: "tabbar") as! UIViewController
+        self.show(vc, sender: self)
+        
     }
     
     

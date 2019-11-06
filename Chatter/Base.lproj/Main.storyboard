@@ -99,7 +99,7 @@
         <!--Message Board View Controller-->
         <scene sceneID="2RF-Je-9tM">
             <objects>
-                <viewController id="gFf-3k-imv" customClass="MessageBoardViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="board" id="gFf-3k-imv" customClass="MessageBoardViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kyA-fc-LOY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -444,7 +444,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Omv-Ry-hl1">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xQl-PP-ppJ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" automaticallyAdjustsScrollViewInsets="NO" id="xQl-PP-ppJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="S40-S5-aPd"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6IL-7Q-4wA">
@@ -491,7 +491,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dsh-ey-Nhz"/>
-        <segue reference="bhn-GL-ypS"/>
-        <segue reference="H9C-FX-4lY"/>
+        <segue reference="mNF-TE-mz5"/>
+        <segue reference="mvU-QT-yC1"/>
     </inferredMetricsTieBreakers>
 </document>
