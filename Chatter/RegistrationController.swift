@@ -17,6 +17,11 @@ class RegistrationController: UIViewController {
     @IBOutlet weak var emailOutlet: UITextField!
     @IBOutlet weak var usernameOutlet: UITextField!
     @IBOutlet weak var passwordOutlet: UITextField!
+    @IBAction func backToLoginAction(_ sender: Any) {
+    
+        let vc: UIViewController = storyboard?.instantiateViewController(withIdentifier: "login") as! UIViewController
+        self.show(vc, sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

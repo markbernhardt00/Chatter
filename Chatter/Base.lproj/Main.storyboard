@@ -10,9 +10,8 @@
         <!--Navigation Controller-->
         <scene sceneID="zsp-pC-5HV">
             <objects>
-                <navigationController id="X4E-t3-njk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navbar" navigationBarHidden="YES" id="X4E-t3-njk" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="we0-LP-jS4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -26,7 +25,7 @@
         <!--View Controller-->
         <scene sceneID="bGg-he-9ps">
             <objects>
-                <viewController id="zim-fU-Aqg" customClass="ViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="zim-fU-Aqg" customClass="ViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNi-Fb-CXA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,6 +298,9 @@
                                 <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="12"/>
                                 <color key="tintColor" red="0.00014052976620000001" green="0.063222371040000003" blue="0.25569301840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="LOG IN INSTEAD"/>
+                                <connections>
+                                    <action selector="backToLoginAction:" destination="peS-as-Ddm" eventType="touchUpInside" id="sOl-qK-cL1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zH-VU-42v">
                                 <rect key="frame" x="9" y="796" width="396" height="42"/>
@@ -490,7 +492,7 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dsh-ey-Nhz"/>
+        <segue reference="1Eh-hh-qft"/>
         <segue reference="mNF-TE-mz5"/>
         <segue reference="mvU-QT-yC1"/>
     </inferredMetricsTieBreakers>
