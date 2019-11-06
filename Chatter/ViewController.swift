@@ -68,6 +68,9 @@ class ViewController: UIViewController {
                 print("Login Successful")
                 self.showMessageBoardController(self)
             case let .failure(error):
+                let alert = UIAlertController(title: "Error", message: "Login failed try again", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
+                self.present(alert, animated: true)
                 print("FAILED")
                 print(error)
             }

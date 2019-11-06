@@ -63,6 +63,9 @@ class RegistrationController: UIViewController {
                 print("Registration Successful")
                 self.showMessageBoardViewController(self)
             case let .failure(error):
+                let alert = UIAlertController(title: "Error", message: "Registration failed try again", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
+                self.present(alert, animated: true)
                 print("FAILED")
                 print(error)
             }
