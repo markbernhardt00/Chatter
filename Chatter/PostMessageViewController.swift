@@ -68,9 +68,9 @@ class PostMessageViewController: UIViewController {
         .responseJSON { response in
             switch response.result {
             case .success:
-                print("New post Successful")
+                print("New post Successful!")
             case let .failure(error):
-                let alert = UIAlertController(title: "Error", message: "Post failed! :(", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "Please verify your account before posting!", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
                 self.present(alert, animated: true)
                 print("FAILED")
