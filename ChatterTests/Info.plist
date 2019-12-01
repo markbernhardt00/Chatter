@@ -18,5 +18,13 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location is required for messaging services</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is required for messaging services</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location is required for messaging services</string>
+	<key>privacy - location usage description</key>
+	<string>Location is required for messaging services</string>
 </dict>
 </plist>

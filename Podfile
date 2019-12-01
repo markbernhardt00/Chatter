@@ -4,4 +4,6 @@ target 'Chatter' do
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'CryptoSwift', '~> 1.0'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end

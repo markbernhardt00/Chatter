@@ -24,6 +24,13 @@ PODS:
   - CryptoSwift (1.1.3)
   - FBSDKCoreKit (4.44.1):
     - Bolts (~> 1.9)
+  - GoogleMaps (3.6.0):
+    - GoogleMaps/Maps (= 3.6.0)
+  - GoogleMaps/Base (3.6.0)
+  - GoogleMaps/Maps (3.6.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.6.0):
+    - GoogleMaps/Base (= 3.6.0)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -31,6 +38,8 @@ DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - CryptoSwift (~> 1.0)
   - FBSDKCoreKit (~> 4.9)
+  - GoogleMaps
+  - GooglePlaces
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -40,6 +49,8 @@ SPEC REPOS:
     - Bolts
     - CryptoSwift
     - FBSDKCoreKit
+    - GoogleMaps
+    - GooglePlaces
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -48,8 +59,10 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   CryptoSwift: 6b6e488df0598b3e9fa49254ed1a65e8c1b1e10b
   FBSDKCoreKit: a823ae35bdb60ebb8d7a7e51abe7c5d87d2bfced
+  GoogleMaps: 82f8fe307193bb4de6ef6bf9e88f1d624b718f9d
+  GooglePlaces: 1b9d29cf3e164903d873600f511f42acdfe85294
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 4d4f16732f73bfc97255527e1134be7892fb7ee4
+PODFILE CHECKSUM: d46ff7ba2916f4a215d11d4ebb2d1241aa5c0e18
 
 COCOAPODS: 1.8.4
