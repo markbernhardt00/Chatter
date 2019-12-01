@@ -10,22 +10,16 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
-    var zoomLevel: Float = 15.0
-
-    // An array to hold the list of likely places.
-    var likelyPlaces: [GMSPlace] = []
-
-    // The currently selected place.
-    var selectedPlace: GMSPlace?
+    var zoomLevel: Float = 5.0
 
     // A default location to use when location permission is not granted.
-    let defaultLocation = CLLocation(latitude: -33.869405, longitude: 151.199)
+    let defaultLocation = CLLocation(latitude: 30.2672, longitude: -97.7431)
     
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -48,10 +42,15 @@ class MapViewController: UIViewController {
       mapView.settings.myLocationButton = true
       mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
       mapView.isMyLocationEnabled = true
+        mapView.delegate = self
 
       // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         mapView.isHidden = true
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+      print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
     }
     
 
