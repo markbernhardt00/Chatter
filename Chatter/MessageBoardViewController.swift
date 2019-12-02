@@ -10,8 +10,13 @@ import UIKit
 import Foundation
 import Alamofire
 import SwiftyJSON
+import GoogleMaps
+import GooglePlaces
 
-class MessageBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MessageBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMSMapViewDelegate {
+    
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocation?
     
     var messages: [Message] = []
     var messageWrapper: MessageWrapper? // holds the last wrapper that we've loaded
@@ -45,9 +50,27 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
         
+        // Initialize the location manager.
+        locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.distanceFilter = 0
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
     }
     
     func fetchMessages() {
+        guard let latitude = locationManager.location?.coordinate.latitude else {
+            print("failed to retrieve location")
+            return
+        }
+        guard let longitude = locationManager.location?.coordinate.longitude else {
+            print("failed to retrieve location")
+            return
+        }
+        let currentLocation = [latitude, longitude]
+        print("CURRENT LAT/LONG")
+        print(currentLocation)
     
         AF.request(Message.endpointForMessages())
             .validate(statusCode: 200..<400)
@@ -83,3 +106,41 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     }
 }
 }
+
+// Delegates to handle events for the location manager.
+extension MessageBoardViewController: CLLocationManagerDelegate {
+
+  // Handle incoming location events.
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    let location: CLLocation = locations.last!
+    print("Location: \(location)")
+  }
+
+  // Handle authorization for the location manager.
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    switch status {
+    case .restricted:
+      print("Location access was restricted.")
+    case .denied:
+      print("User denied access to location.")
+    case .notDetermined:
+      print("Location status not determined.")
+    case .authorizedAlways: fallthrough
+    case .authorizedWhenInUse:
+      print("Location status is OK.")
+    @unknown default:
+      fatalError()
+    }
+  }
+
+  // Handle location manager errors.
+  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    locationManager.stopUpdatingLocation()
+    print("Error: \(error)")
+  }
+}
+
+
+
+
+
