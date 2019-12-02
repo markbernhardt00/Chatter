@@ -10,6 +10,8 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
+var messageCoords: [[Double]] = []
+
 class MapViewController: UIViewController, GMSMapViewDelegate {
     
     var locationManager = CLLocationManager()
@@ -19,6 +21,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var zoomLevel: Float = 17.0
     var path = GMSMutablePath()
     var polygon = GMSPolygon()
+    var pathCoords: [CLLocationCoordinate2D] = []
 
     // A default location to use when location permission is not granted.
     let defaultLocation = CLLocation(latitude: 30.2297, longitude: -97.7539)
@@ -26,6 +29,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var mapHolder: UIView!
     override func viewDidLoad() {
       super.viewDidLoad()
+        
 
       // Initialize the location manager.
       locationManager = CLLocationManager()
@@ -56,6 +60,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBAction func clear(_ sender: UIButton) {
         path.removeAllCoordinates()
+        pathCoords.removeAll()
         polygon.map = nil
     }
     @IBAction func previewPolyline(_ sender: UIButton) {
@@ -65,9 +70,18 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func submit(_ sender: UIButton) {
+        messageCoords = []
+        for coord in pathCoords {
+            var inner: [Double] = []
+            inner.append(coord.latitude)
+            inner.append(coord.longitude)
+            messageCoords.append(inner)
+        }
+        print(messageCoords)
     }
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
       print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        pathCoords.append(coordinate)
         path.add(coordinate)
     }
     
