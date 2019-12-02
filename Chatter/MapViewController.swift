@@ -18,7 +18,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
-    var zoomLevel: Float = 17.0
+    var zoomLevel: Float = 5.0
     var path = GMSMutablePath()
     var polygon = GMSPolygon()
     var pathCoords: [CLLocationCoordinate2D] = []
@@ -73,10 +73,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         messageCoords.removeAll()
         for coord in pathCoords {
             var inner: [Double] = []
-            inner.append(coord.latitude)
             inner.append(coord.longitude)
+            inner.append(coord.latitude)
             messageCoords.append(inner)
         }
+        // Polygons must close on themselves.. weird.
+        let closingCoord = [pathCoords[0].longitude, pathCoords[0].latitude]
+        messageCoords.append(closingCoord)
         print(messageCoords)
     }
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {

@@ -68,11 +68,11 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
             print("failed to retrieve location")
             return
         }
-        let currentLocation = [latitude, longitude]
+        let currentLocation = [longitude, latitude]
         print("CURRENT LAT/LONG")
         print(currentLocation)
     
-        AF.request(Message.endpointForMessages() + "?location=[\(latitude),%20\(longitude)]")
+        AF.request(Message.endpointForMessages() + "?location=\(longitude),\(latitude)")
             .validate(statusCode: 200..<400)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
