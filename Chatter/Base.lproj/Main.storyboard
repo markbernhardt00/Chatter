@@ -40,7 +40,7 @@
                                 <rect key="frame" x="68" y="296" width="279" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login to Chatter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rb-nu-7c3">
                                 <rect key="frame" x="68" y="171" width="279" height="37"/>
@@ -339,7 +339,7 @@
             <objects>
                 <viewController id="qLP-RN-akW" customClass="PostMessageViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xW1-cw-l0h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNt-eS-haO">
@@ -382,8 +382,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-lJ-GwP">
-                                <rect key="frame" x="166" y="573" width="82" height="30"/>
+                                <rect key="frame" x="92" y="573" width="230" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="22"/>
                                 <state key="normal" title="Set location"/>
                                 <connections>
                                     <segue destination="uA9-Za-IyT" kind="show" id="IsJ-ma-MZy"/>
@@ -512,7 +513,7 @@
             <objects>
                 <viewController id="uA9-Za-IyT" customClass="MapViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNR-XW-YW5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Liy-xT-GE9">
@@ -534,6 +535,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submit:" destination="uA9-Za-IyT" eventType="touchUpInside" id="79W-2P-X0Q"/>
+                                    <segue destination="qLP-RN-akW" kind="show" id="wCk-Yn-85A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryr-wg-7ED">
@@ -548,6 +550,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="lJM-iI-Y5X"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WFN-iq-rCz"/>
                     <connections>
                         <outlet property="mapHolder" destination="Liy-xT-GE9" id="OLY-EH-Bn5"/>
                     </connections>
@@ -565,7 +568,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1Eh-hh-qft"/>
-        <segue reference="mNF-TE-mz5"/>
+        <segue reference="wCk-Yn-85A"/>
         <segue reference="mvU-QT-yC1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -36,6 +36,13 @@ class PostMessageViewController: UIViewController {
     
     func post() {
         
+        if(messageCoords == []) {
+            let alert = UIAlertController(title: "Error", message: "You need to specify a location before posting!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
+        
         
         let exp = expirationDate.date
         print("BEFORE")
@@ -61,7 +68,8 @@ class PostMessageViewController: UIViewController {
         let parameters: [String: String] = [
             "username" : loggedInUser,
             "content" : messageBox.text,
-            "expiration": dateString
+            "expiration": dateString,
+            "geofence": "{\"coords\": \(messageCoords)}"
         ]
         AF.request("http://142.93.64.49/messages/new", method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)

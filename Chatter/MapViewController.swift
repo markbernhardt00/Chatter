@@ -70,7 +70,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     @IBAction func submit(_ sender: UIButton) {
-        messageCoords = []
+        messageCoords.removeAll()
         for coord in pathCoords {
             var inner: [Double] = []
             inner.append(coord.latitude)
