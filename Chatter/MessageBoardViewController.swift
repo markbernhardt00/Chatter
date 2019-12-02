@@ -72,7 +72,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         print("CURRENT LAT/LONG")
         print(currentLocation)
     
-        AF.request(Message.endpointForMessages())
+        AF.request(Message.endpointForMessages() + "?location=[\(latitude),%20\(longitude)]")
             .validate(statusCode: 200..<400)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
