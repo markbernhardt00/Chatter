@@ -17,6 +17,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 17.0
+    var path = GMSMutablePath()
+    var polygon = GMSPolygon()
 
     // A default location to use when location permission is not granted.
     let defaultLocation = CLLocation(latitude: 30.2297, longitude: -97.7539)
@@ -51,8 +53,22 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         mapView.isHidden = true
     }
     
+    
+    @IBAction func clear(_ sender: UIButton) {
+        path.removeAllCoordinates()
+        polygon.map = nil
+    }
+    @IBAction func previewPolyline(_ sender: UIButton) {
+        polygon.map = nil
+        polygon = GMSPolygon(path: path)
+        polygon.map = mapView
+    }
+    
+    @IBAction func submit(_ sender: UIButton) {
+    }
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
       print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        path.add(coordinate)
     }
     
 
