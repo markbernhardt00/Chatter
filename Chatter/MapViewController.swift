@@ -78,8 +78,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             messageCoords.append(inner)
         }
         // Polygons must close on themselves.. weird.
-        let closingCoord = [pathCoords[0].longitude, pathCoords[0].latitude]
-        messageCoords.append(closingCoord)
+        if (!pathCoords.isEmpty) {
+            let closingCoord = [pathCoords[0].longitude, pathCoords[0].latitude]
+            messageCoords.append(closingCoord)
+            performSegue(withIdentifier: "mapToPostSegue", sender: self)
+        }
+        else {
+            let alert = UIAlertController(title: "Error", message: "Specify a location!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
         print(messageCoords)
     }
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {

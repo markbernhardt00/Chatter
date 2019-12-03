@@ -535,7 +535,6 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submit:" destination="uA9-Za-IyT" eventType="touchUpInside" id="79W-2P-X0Q"/>
-                                    <segue destination="qLP-RN-akW" kind="show" id="wCk-Yn-85A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryr-wg-7ED">
@@ -553,6 +552,7 @@
                     <navigationItem key="navigationItem" id="WFN-iq-rCz"/>
                     <connections>
                         <outlet property="mapHolder" destination="Liy-xT-GE9" id="OLY-EH-Bn5"/>
+                        <segue destination="qLP-RN-akW" kind="show" identifier="mapToPostSegue" id="P0W-2W-F0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSn-4r-3Vf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -568,7 +568,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1Eh-hh-qft"/>
-        <segue reference="wCk-Yn-85A"/>
+        <segue reference="P0W-2W-F0u"/>
         <segue reference="mvU-QT-yC1"/>
     </inferredMetricsTieBreakers>
 </document>
