@@ -60,6 +60,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBAction func clear(_ sender: UIButton) {
         path.removeAllCoordinates()
+        mapView.clear()
         pathCoords.removeAll()
         polygon.map = nil
     }
@@ -95,6 +96,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
       print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
         pathCoords.append(coordinate)
         path.add(coordinate)
+        let marker = GMSMarker(position: coordinate)
+        marker.map = mapView
     }
     
 
