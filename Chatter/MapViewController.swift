@@ -67,6 +67,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBAction func previewPolyline(_ sender: UIButton) {
         polygon.map = nil
         polygon = GMSPolygon(path: path)
+        polygon.strokeWidth = 3
+        polygon.strokeColor = UIColor.red
         polygon.map = mapView
     }
     

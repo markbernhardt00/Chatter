@@ -573,6 +573,7 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="IsJ-ma-MZy"/>
         <segue reference="dsh-ey-Nhz"/>
         <segue reference="P0W-2W-F0u"/>
         <segue reference="mvU-QT-yC1"/>
