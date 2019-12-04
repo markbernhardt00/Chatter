@@ -70,7 +70,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         polygon.map = mapView
     }
     
-    @IBAction func submit(_ sender: UIButton) {
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+      print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        pathCoords.append(coordinate)
+        path.add(coordinate)
+        let marker = GMSMarker(position: coordinate)
+        marker.map = mapView
+    }
+    
+    @IBAction func submitLocation(_ sender: UIButton) {
         messageCoords.removeAll()
         for coord in pathCoords {
             var inner: [Double] = []
@@ -92,15 +100,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
         print(messageCoords)
     }
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-      print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
-        pathCoords.append(coordinate)
-        path.add(coordinate)
-        let marker = GMSMarker(position: coordinate)
-        marker.map = mapView
-    }
     
-
     /*
     // MARK: - Navigation
 

@@ -517,32 +517,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Liy-xT-GE9">
-                                <rect key="frame" x="30" y="142" width="354" height="353"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cc-i0-tte">
-                                <rect key="frame" x="152" y="541" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Preview Polyline"/>
-                                <connections>
-                                    <action selector="previewPolyline:" destination="uA9-Za-IyT" eventType="touchUpInside" id="fwj-ec-XSd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOs-uk-03s">
-                                <rect key="frame" x="181" y="692" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submit:" destination="uA9-Za-IyT" eventType="touchUpInside" id="79W-2P-X0Q"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryr-wg-7ED">
-                                <rect key="frame" x="187" y="579" width="36" height="30"/>
+                                <rect key="frame" x="189" y="718" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="clear:" destination="uA9-Za-IyT" eventType="touchUpInside" id="OvL-NC-uTk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-lI-7Ub">
+                                <rect key="frame" x="9" y="756" width="396" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.00014052976620000001" green="0.063222371040000003" blue="0.25569301840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew-Light" family="Arial Hebrew" pointSize="17"/>
+                                <state key="normal" title="SUBMIT LOCATION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAccountBtn:" destination="peS-as-Ddm" eventType="touchUpInside" id="2vB-Yf-jrr"/>
+                                    <action selector="signInAction:" destination="zim-fU-Aqg" eventType="touchUpInside" id="QjU-R2-X8a"/>
+                                    <action selector="submitLocation:" destination="uA9-Za-IyT" eventType="touchUpInside" id="nOq-Qf-sG8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cc-i0-tte">
+                                <rect key="frame" x="180" y="680" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Preview"/>
+                                <connections>
+                                    <action selector="previewPolyline:" destination="uA9-Za-IyT" eventType="touchUpInside" id="fwj-ec-XSd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -567,7 +573,7 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Eh-hh-qft"/>
+        <segue reference="dsh-ey-Nhz"/>
         <segue reference="P0W-2W-F0u"/>
         <segue reference="mvU-QT-yC1"/>
     </inferredMetricsTieBreakers>
