@@ -172,7 +172,7 @@
             </objects>
             <point key="canvasLocation" x="3973.913043478261" y="863.83928571428567"/>
         </scene>
-        <!--Direct Message-->
+        <!--Direct Messages-->
         <scene sceneID="eWn-DB-4RO">
             <objects>
                 <tableViewController id="gc2-wS-sj7" sceneMemberID="viewController">
@@ -195,7 +195,7 @@
                             <outlet property="delegate" destination="gc2-wS-sj7" id="aXQ-jT-yKI"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Direct Message" image="message" catalog="system" id="Dl9-vS-vhp"/>
+                    <tabBarItem key="tabBarItem" title="Direct Messages" image="message" catalog="system" id="Dl9-vS-vhp"/>
                     <navigationItem key="navigationItem" id="EVH-Wz-OD0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ED4-BC-Cc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,7 +339,7 @@
             <objects>
                 <viewController id="qLP-RN-akW" customClass="PostMessageViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xW1-cw-l0h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNt-eS-haO">
@@ -513,7 +513,7 @@
             <objects>
                 <viewController id="uA9-Za-IyT" customClass="MapViewController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNR-XW-YW5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Liy-xT-GE9">
@@ -573,9 +573,8 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IsJ-ma-MZy"/>
-        <segue reference="dsh-ey-Nhz"/>
-        <segue reference="P0W-2W-F0u"/>
-        <segue reference="mvU-QT-yC1"/>
+        <segue reference="1Eh-hh-qft"/>
+        <segue reference="bhn-GL-ypS"/>
+        <segue reference="H9C-FX-4lY"/>
     </inferredMetricsTieBreakers>
 </document>

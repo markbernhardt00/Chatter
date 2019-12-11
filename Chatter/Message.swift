@@ -26,13 +26,12 @@ class Message {
         self.username = username
     self.content = content
   }
-  
-  // MARK: Endpoints
-//  class func endpointForID(_ id: Int) -> String {
-//    return "https://swapi.co/api/species/\(id)"
-//  }
-  class func endpointForMessages() -> String {
-    return "http://142.93.64.49/messages"
-  }
+
+    class func endpointForMessages() -> String {
+        return "http://142.93.64.49/messages"
+    }
+    class func endpointForHideMessage() -> String {
+        return "http://142.93.64.49/messages/hide_message"
+    }
 
 }

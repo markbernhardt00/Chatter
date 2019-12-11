@@ -38,6 +38,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         messages = []
@@ -59,6 +60,54 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         locationManager.delegate = self
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteItem = UIContextualAction(style: .destructive, title: "Hide") { (contextualAction, view, boolValue) in
+            print(self.messages[indexPath.row].content!)
+            self.hideMessage(message: self.messages[indexPath.row].content!)
+        }
+        let replyAction = UIContextualAction(style: .normal, title: "Reply") { (contextualAction, view, boolValue) in
+            print(self.messages[indexPath.row].content!)
+            self.hideMessage(message: self.messages[indexPath.row].content!)
+        }
+        replyAction.backgroundColor = .black
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteItem, replyAction])
+        return swipeActions
+    }
+//
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let contextItem = UIContextualAction(style: .destructive, title: "Hide") { (contextualAction, view, boolValue) in
+//            print(self.messages[indexPath.row].content!)
+//            self.hideMessage(message: self.messages[indexPath.row].content!)
+//        }
+//        contextItem.backgroundColor = .black
+//        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+//        return swipeActions
+//    }
+    
+    
+    
+    func hideMessage(message: String) {
+        let parameters: [String: String] = [
+            "username" : loggedInUser,
+            "message_content": message
+        ]
+        print(parameters)
+        AF.request(Message.endpointForHideMessage(), method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+        .responseString { response in
+            switch response.result {
+            case .success:
+                print("Successfully hid " + message)
+                self.fetchMessages()
+            case let .failure(error):
+                let alert = UIAlertController(title: "Error", message: "Failed to hide message", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                print(error)
+            }
+        }
+    }
+    
     func fetchMessages() {
         guard let latitude = locationManager.location?.coordinate.latitude else {
             print("failed to retrieve location")
@@ -72,7 +121,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         print("CURRENT LAT/LONG")
         print(currentLocation)
     
-        AF.request(Message.endpointForMessages() + "?location=\(longitude),\(latitude)")
+        AF.request(Message.endpointForMessages() + "?location=\(longitude),\(latitude)&username=\(loggedInUser)")
             .validate(statusCode: 200..<400)
             .validate(contentType: ["application/json"])
             .responseJSON { response in

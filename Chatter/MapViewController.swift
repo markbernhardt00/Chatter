@@ -18,7 +18,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
-    var zoomLevel: Float = 17.0
+    var zoomLevel: Float = 18.0
     var path = GMSMutablePath()
     var polygon = GMSPolygon()
     var pathCoords: [CLLocationCoordinate2D] = []
