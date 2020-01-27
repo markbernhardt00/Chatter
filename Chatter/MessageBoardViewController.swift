@@ -1,10 +1,5 @@
-//
 //  MessageBoardControllerViewController.swift
 //  Chatter
-//
-//  Created by Michael Ruck on 11/5/19.
-//  Copyright © 2019 Michael Ruck. All rights reserved.
-//
 
 import UIKit
 import Foundation
@@ -13,7 +8,7 @@ import SwiftyJSON
 import GoogleMaps
 import GooglePlaces
 
-class MessageBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMSMapViewDelegate {
+class MessageBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GMSMapViewDelegate, UISearchBarDelegate {
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
@@ -22,10 +17,13 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     var messageWrapper: MessageWrapper? // holds the last wrapper that we've loaded
     var isLoadingMessages = false
     @IBOutlet weak var messageTableOutlet: UITableView!
+    @IBOutlet weak var searchBarOutlet: UISearchBar!
+    
+    var filteredData: [Message]! // array containing matching substrings to search string
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        return filteredData.count
     }
     
     @IBAction func tap(_ sender: UITapGestureRecognizer) {
@@ -34,7 +32,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier:"Cell")
-        cell.textLabel?.text = messages[indexPath.row].content! + " via " + messages[indexPath.row].username!
+        cell.textLabel?.text = filteredData[indexPath.row].content! + " via " + filteredData[indexPath.row].username!
         return cell
     }
     
@@ -42,6 +40,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         messages = []
+        searchBarOutlet.delegate = self
         messageTableOutlet.isUserInteractionEnabled = true
         fetchMessages()
         // Do any additional setup after loading the view.
@@ -58,16 +57,17 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         locationManager.distanceFilter = 0
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        filteredData = messages
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteItem = UIContextualAction(style: .destructive, title: "Hide") { (contextualAction, view, boolValue) in
             print(self.messages[indexPath.row].content!)
-            self.hideMessage(message: self.messages[indexPath.row].content!)
+            self.hideMessage(message: self.filteredData[indexPath.row].content!)
         }
         let replyAction = UIContextualAction(style: .normal, title: "Reply") { (contextualAction, view, boolValue) in
             print(self.messages[indexPath.row].content!)
-            self.hideMessage(message: self.messages[indexPath.row].content!)
+            self.hideMessage(message: self.filteredData[indexPath.row].content!)
         }
         replyAction.backgroundColor = .black
         let swipeActions = UISwipeActionsConfiguration(actions: [deleteItem, replyAction])
@@ -106,6 +106,23 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
                 print(error)
             }
         }
+    }
+    
+    // This method updates filteredData based on the text in the Search Box
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // When there is no text, filteredData is the same as the original data
+        // When user has entered text into the search box
+        // Use the filter method to iterate over all items in the data array
+        // For each item, return true if the item should be included and false if the
+        // item should NOT be included
+        filteredData = searchText.isEmpty ? messages : messages.filter { (item: Message) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            print("Filtering")
+            print(item.content!.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil)
+            return item.content!.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        messageTableOutlet.reloadData()
     }
     
     func fetchMessages() {
@@ -153,6 +170,8 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
                  }
         }
     }
+        searchBarOutlet.text = ""
+        filteredData = messages
 }
 }
 

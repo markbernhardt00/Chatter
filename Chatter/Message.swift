@@ -3,7 +3,6 @@
 //  Chatter
 //
 //  Created by Mark Bernhardt on 11/5/19.
-//  Copyright © 2019 Michael Ruck. All rights reserved.
 //
 
 import Foundation

@@ -2,9 +2,6 @@
 //  SceneDelegate.swift
 //  Chatter
 //
-//  Created by Michael Ruck on 11/4/19.
-//  Copyright © 2019 Michael Ruck. All rights reserved.
-//
 
 import UIKit
 
