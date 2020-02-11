@@ -32,16 +32,22 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.default, reuseIdentifier:"Cell")
-        cell.textLabel?.text = filteredData[indexPath.row].content! + " via " + filteredData[indexPath.row].username!
+        cell.textLabel?.text = filteredData[indexPath.row].username! + " says: " + filteredData[indexPath.row].content!
+        cell.textLabel?.numberOfLines = 10
         return cell
     }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         messages = []
         searchBarOutlet.delegate = self
+        messageTableOutlet.delegate = self
+        messageTableOutlet.dataSource = self
         messageTableOutlet.isUserInteractionEnabled = true
+        messageTableOutlet.rowHeight = UITableView.automaticDimension
+        messageTableOutlet.estimatedRowHeight = UITableView.automaticDimension
         fetchMessages()
         // Do any additional setup after loading the view.
         navigationItem.title = loggedInUser + "'s Board"
@@ -58,6 +64,11 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
         filteredData = messages
+    }
+    
+    // UITableViewAutomaticDimension calculates height of label contents/text
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
