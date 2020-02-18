@@ -149,7 +149,6 @@
                         <outlet property="messageTableOutlet" destination="Ze2-Dx-qFF" id="Qcm-tJ-Hgg"/>
                         <outlet property="searchBarOutlet" destination="GIy-Sc-Yqp" id="HMm-PM-LMt"/>
                         <segue destination="Ugm-DI-Tpv" kind="show" identifier="messageToPost" id="DbW-b5-vXd"/>
-                        <segue destination="iLy-hH-IZR" kind="show" id="t13-jJ-MhW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j84-jQ-nMz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -161,36 +160,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3973.913043478261" y="863.83928571428567"/>
-        </scene>
-        <!--Direct Messages-->
-        <scene sceneID="eWn-DB-4RO">
-            <objects>
-                <tableViewController id="gc2-wS-sj7" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iW8-Ad-0fG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rj9-xi-tmF">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rj9-xi-tmF" id="FzS-3W-wvG">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gc2-wS-sj7" id="XAu-Sh-fUz"/>
-                            <outlet property="delegate" destination="gc2-wS-sj7" id="aXQ-jT-yKI"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Direct Messages" image="message" catalog="system" id="Dl9-vS-vhp"/>
-                    <navigationItem key="navigationItem" id="EVH-Wz-OD0"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ED4-BC-Cc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5919" y="864"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ONo-X1-ePT">
@@ -372,10 +341,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-lJ-GwP">
-                                <rect key="frame" x="92" y="573" width="230" height="33"/>
+                                <rect key="frame" x="75" y="588" width="264" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="22"/>
-                                <state key="normal" title="Set location"/>
+                                <state key="normal" title="View map to set location">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="uA9-Za-IyT" kind="show" id="IsJ-ma-MZy"/>
                                 </connections>
@@ -470,33 +442,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="ipM-R7-0AE" kind="relationship" relationship="viewControllers" id="wxD-84-vQA"/>
-                        <segue destination="gc2-wS-sj7" kind="relationship" relationship="viewControllers" id="mvU-QT-yC1"/>
                         <segue destination="qLP-RN-akW" kind="relationship" relationship="viewControllers" id="mNF-TE-mz5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mH3-kS-6wY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2153.6231884057975" y="863.83928571428567"/>
-        </scene>
-        <!--Direct Message-->
-        <scene sceneID="TqY-0F-SLK">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iLy-hH-IZR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Direct Message" image="message" catalog="system" id="gV9-eM-zYq"/>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="SnM-mn-w2k"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yHb-EE-Ljt">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gc2-wS-sj7" kind="relationship" relationship="rootViewController" id="H9C-FX-4lY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HKU-7y-7Ei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4954" y="864"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="zNa-Sb-Ngo">
@@ -558,13 +509,11 @@
     </scenes>
     <resources>
         <image name="doc.plaintext" catalog="system" width="56" height="64"/>
-        <image name="message" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1Eh-hh-qft"/>
         <segue reference="bhn-GL-ypS"/>
-        <segue reference="H9C-FX-4lY"/>
     </inferredMetricsTieBreakers>
 </document>
