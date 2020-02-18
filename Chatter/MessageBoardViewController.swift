@@ -130,7 +130,7 @@ class MessageBoardViewController: UIViewController, UITableViewDataSource, UITab
             // If dataItem matches the searchText, return true to include it
             print("Filtering")
             print(item.content!.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil)
-            return item.content!.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            return item.content!.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil || item.username!.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
         
         messageTableOutlet.reloadData()
